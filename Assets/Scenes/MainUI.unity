@@ -1738,6 +1738,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: pnl_counting_sheep
       objectReference: {fileID: 0}
+    - target: {fileID: 9140184262307346083, guid: 2419860fe998da941b99138eeaad5091,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9201094120844595710, guid: 2419860fe998da941b99138eeaad5091,
         type: 3}
       propertyPath: bgImage

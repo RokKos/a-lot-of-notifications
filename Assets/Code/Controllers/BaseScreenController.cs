@@ -27,7 +27,8 @@ public class BaseScreenController : MonoBehaviour
     public virtual void OnScreenEnter()
     {
         Debug.Log(screenType.ToString("F") + "::OnScreenEnter()");
-        bgImage.DOFade(1.0f, 0.3f);
+        bgImage.DOFade(1.0f, 1.0f);
+        gameObject.transform.DOPunchScale(Vector3.one * 0.1f, 0.4f);
 
     }
     
@@ -52,6 +53,10 @@ public class BaseScreenController : MonoBehaviour
     {
         Debug.Log(screenType.ToString("F") + "::OnScreenDisable()");
         this.gameObject.SetActive(false);
+        
+        var bgColor = bgImage.color;
+        bgColor.a = 0.0f;
+        bgImage.color = bgColor;
     }
 
 
