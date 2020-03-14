@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         {
             SendEvent("Back");
         }
+        
+        _currScreenController.OnScreenUpdate();
     }
 
     public void SendEvent(string eventTypeStr)
