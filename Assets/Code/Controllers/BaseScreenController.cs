@@ -22,12 +22,12 @@ public class BaseScreenController : MonoBehaviour
 
     public virtual void OnScreenEnter()
     {
-        
+        Debug.Log(screenType.ToString("F") + "::OnScreenEnter()");
     }
     
     public virtual void OnScreenExit()
     {
-        
+        Debug.Log(screenType.ToString("F") + "::OnScreenExit()");
     }
     
     public virtual void OnScreenUpdate()
@@ -37,11 +37,13 @@ public class BaseScreenController : MonoBehaviour
     
     public virtual void OnScreenEnable()
     {
+        Debug.Log(screenType.ToString("F") + "::OnScreenEnable()");
         this.gameObject.SetActive(true);
     }
     
     public virtual void OnScreenDisable()
     {
+        Debug.Log(screenType.ToString("F") + "::OnScreenDisable()");
         this.gameObject.SetActive(false);
     }
 
