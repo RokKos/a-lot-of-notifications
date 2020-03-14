@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
         {"ToHomeScreen", EventType.ToHomeScreen},
         {"ToEmailSortingScreen", EventType.ToEmailSortingScreen},
         {"ToClickerScreen", EventType.ToClickerScreen},
-        {"ToCountingScreen", EventType.ToClickerScreen}
+        {"ToCountingScreen", EventType.ToCountingScreen}
     };
 
     private EventType ConvertFromStr(string str)
