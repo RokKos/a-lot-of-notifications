@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<BaseScreenController> baseScreenControllers = new List<BaseScreenController>();
 
-    private BaseScreenController curr_screen_controller = null;
+    private BaseScreenController _currScreenController = null;
+    private BaseScreenController _prevScreenController = null;
 
 
     void Start()
@@ -25,55 +26,58 @@ public class GameManager : MonoBehaviour
             baseScreenController.OnScreenDisable();
         }
 
-        curr_screen_controller = FindScreen(ScreenTypes.HomeScreen);
-        curr_screen_controller.OnScreenEnable();
+        _currScreenController = FindScreen(ScreenTypes.HomeScreen);
+        _currScreenController.OnScreenEnable();
+        _prevScreenController = null;
     }
 
 
     void Update()
     {
+        if (Input.GetButtonUp("Cancel"))
+        {
+            SendEvent("Back");
+        }
     }
 
     public void SendEvent(string eventTypeStr)
     {
         EventType eventType = ConvertFromStr(eventTypeStr);
 
-        curr_screen_controller.OnScreenExit();
-        curr_screen_controller.OnScreenDisable();
-
         switch (eventType)
         {
             case EventType.Back:
             {
-                Debug.Log("Back Event Send");
+                Debug.Log("Event Send::Back");
+                HandleBackButton();
                 break;
             }
 
             case EventType.ToHomeScreen:
             {
-                curr_screen_controller = FindScreen(ScreenTypes.HomeScreen);
-                Debug.Log("ToHomeScreen Event Send");
+                Debug.Log("Event Send::ToHomeScreen");
+                ProcessButtonInput(ScreenTypes.HomeScreen);
                 break;
             }
 
             case EventType.ToEmailSortingScreen:
             {
-                curr_screen_controller = FindScreen(ScreenTypes.EmailSortingScreen);
-                Debug.Log("ToEmailSortingScreen Event Send");
+                Debug.Log("Event Send::ToEmailSortingScreen");
+                ProcessButtonInput(ScreenTypes.EmailSortingScreen);
                 break;
             }
 
             case EventType.ToClickerScreen:
             {
-                curr_screen_controller = FindScreen(ScreenTypes.ClickerScreen);
-                Debug.Log("ToClickerScreen Event Send");
+                Debug.Log("Event Send::ToClickerScreen");
+                ProcessButtonInput(ScreenTypes.ClickerScreen);
                 break;
             }
 
             case EventType.ToCountingScreen:
             {
-                curr_screen_controller = FindScreen(ScreenTypes.CountingScreen);
-                Debug.Log("ToCountingScreen Event Send");
+                Debug.Log("Event Send::ToCountingScreen");
+                ProcessButtonInput(ScreenTypes.CountingScreen);
                 break;
             }
 
@@ -83,9 +87,6 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
-        
-        curr_screen_controller.OnScreenEnable();
-        curr_screen_controller.OnScreenEnter();
     }
 
 
@@ -103,6 +104,37 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("No base screen type found");
         return baseScreenControllers[0];
+    }
+
+    void ProcessButtonInput(ScreenTypes screenType)
+    {
+        _currScreenController.OnScreenExit();
+        _currScreenController.OnScreenDisable();
+
+        _prevScreenController = _currScreenController;
+        _currScreenController = FindScreen(screenType);
+
+        _currScreenController.OnScreenEnable();
+        _currScreenController.OnScreenEnter();
+    }
+
+    void HandleBackButton()
+    {
+        if (_prevScreenController != null)
+        {
+            _currScreenController.OnScreenExit();
+            _currScreenController.OnScreenDisable();
+
+            _prevScreenController.OnScreenEnable();
+            _prevScreenController.OnScreenEnter();
+            
+            _currScreenController = _prevScreenController;
+            _prevScreenController = null;
+        }
+        else
+        {
+            Debug.Log("BACK EVENT NOT HANDLED YOU ARE AT HOME SCREEN");
+        }
     }
 
     readonly Dictionary<string, EventType> _stringToEventEnum = new Dictionary<string, EventType>()
