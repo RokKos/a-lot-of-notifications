@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 8838298072110185516}
   - component: {fileID: 5358794825403903006}
   - component: {fileID: 3835373437894015261}
+  - component: {fileID: 9201094120844595710}
   m_Layer: 5
   m_Name: pnl_counting_sheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8838298072110185516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73,3 +74,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9201094120844595710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140184262307346083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c973db49c07eb4e8778c44d7d4e109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenType: 3
