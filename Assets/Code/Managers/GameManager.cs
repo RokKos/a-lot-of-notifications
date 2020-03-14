@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public enum EventType
 {
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
         _currScreenController = FindScreen(ScreenTypes.HomeScreen);
         _currScreenController.OnScreenEnable();
         _prevScreenController = null;
+        
+        DOTween.Init(true, true, LogBehaviour.Default);
     }
 
 

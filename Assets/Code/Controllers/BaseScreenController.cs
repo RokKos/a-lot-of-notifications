@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 
 
 public enum ScreenTypes
@@ -14,6 +16,8 @@ public enum ScreenTypes
 public class BaseScreenController : MonoBehaviour
 {
     [SerializeField] private ScreenTypes screenType = ScreenTypes.HomeScreen;
+    [Header("Properties")]
+    [SerializeField] private Image bgImage = null;
     
     public ScreenTypes GetScreenType() {
         return screenType;
@@ -23,11 +27,14 @@ public class BaseScreenController : MonoBehaviour
     public virtual void OnScreenEnter()
     {
         Debug.Log(screenType.ToString("F") + "::OnScreenEnter()");
+        bgImage.DOFade(1.0f, 0.3f);
+
     }
     
     public virtual void OnScreenExit()
     {
         Debug.Log(screenType.ToString("F") + "::OnScreenExit()");
+        bgImage.DOFade(0.0f, 0.25f);
     }
     
     public virtual void OnScreenUpdate()
