@@ -9,9 +9,8 @@ public class CountingSheepScreenController : BaseScreenController
     public GameObject sheepPrefab;
     public TextMeshProUGUI scoreTMP;
 
-    int playerScore = 1;
+    int playerScore = 0;
     public float timeToReachEnd = 5f;
-    bool ovacaInArea;
 
     public override void OnScreenEnter()
     {
@@ -28,23 +27,10 @@ public class CountingSheepScreenController : BaseScreenController
 
     public void addCounter()
     {
-        if(ovacaInArea)
-        {
-            playerScore++;
-            scoreTMP.text = ("Score: " + playerScore);
-            timeToReachEnd = timeToReachEnd * 0.9f;    
-        }
 
+            playerScore++;
+            scoreTMP.text = ("Sheep count: " + playerScore);
+            timeToReachEnd = timeToReachEnd * 0.9f;    
     }
-    
-    private void OnTriggerStay2D(Collider2D other) {
-        if (other.CompareTag("Ovca"))
-        {
-            ovacaInArea = true;
-        }
-        else
-        {
-            ovacaInArea = false;
-        }
-    }
+
 }

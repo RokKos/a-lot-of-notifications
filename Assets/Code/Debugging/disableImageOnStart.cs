@@ -11,5 +11,4 @@ public class disableImageOnStart : MonoBehaviour
         gameObject.GetComponent<Image>().enabled = false;
     }
 
-
 }

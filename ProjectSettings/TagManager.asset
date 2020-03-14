@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - sheepFence
+  - sheepWinPos
   layers:
   - Default
   - TransparentFX
