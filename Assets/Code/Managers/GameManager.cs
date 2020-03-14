@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
         _currScreenController = FindScreen(ScreenTypes.HomeScreen);
         _currScreenController.OnScreenEnable();
+        _currScreenController.OnScreenEnter();
         _prevScreenController = null;
         
         DOTween.Init(true, true, LogBehaviour.Default);
