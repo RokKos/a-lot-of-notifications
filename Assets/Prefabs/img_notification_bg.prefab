@@ -473,3 +473,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 5790144318728007580}
+  bgImage: {fileID: 6192701198718517442}
+  icon: {fileID: 2734371591038868186}

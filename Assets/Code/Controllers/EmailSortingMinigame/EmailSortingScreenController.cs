@@ -19,7 +19,6 @@ public class EmailSortingScreenController : BaseScreenController
         while(true)
         {
             notificationSpawnerController.SpawnNotification();
-            Debug.Log ("SpamNotifications: "+(int)Time.time);
             yield return new WaitForSeconds(1f);
         }
     }
