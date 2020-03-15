@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
     private float _socialMeterProcent = 500.0f;
     private float _healthMeterProcent = 500.0f;
 
+    [SerializeField] private float rateOfMeterDropping = 8.33333333f;
+    [SerializeField] private float timeIntervalOfDropping = 1.0f;
+
     void Start()
     {
         foreach (var baseScreenController in baseScreenControllers)
@@ -40,10 +44,7 @@ public class GameManager : MonoBehaviour
         DOTween.Init(true, true, LogBehaviour.Default);
         emailDataHelper.ReloadCardData(false);
         
-        uiManager.ChangeWorkMeter(_workMeterProcent);
-        uiManager.ChangeSocialMeter(_socialMeterProcent);
-        uiManager.ChangeHealthMeter(_healthMeterProcent);
-
+        StartCoroutine(DecressMetters());
     }
 
 
@@ -215,5 +216,28 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("WRONG STRING FOR EVENT");
         return EventType.ToHomeScreen;
+    }
+
+    private void UpdateMeters()
+    {
+        if (_currScreenController.GetScreenType() == ScreenTypes.HomeScreen)
+        {
+            uiManager.ChangeWorkMeter(_workMeterProcent);
+            uiManager.ChangeSocialMeter(_socialMeterProcent);
+            uiManager.ChangeHealthMeter(_healthMeterProcent);
+        }
+    }
+    
+    private IEnumerator DecressMetters()
+    {
+        while(true)
+        {
+            _workMeterProcent -= rateOfMeterDropping;
+            _socialMeterProcent -= rateOfMeterDropping;
+            _healthMeterProcent -= rateOfMeterDropping;
+            UpdateMeters();
+            yield return new WaitForSeconds(timeIntervalOfDropping);
+            
+        }
     }
 }
