@@ -11,29 +11,47 @@ public class NotificationSpawnerController : MonoBehaviour
     
     [SerializeField] private Transform parentNotifications = null;
     
-    private List<NotificationController> notificationsDisplayed = new List<NotificationController>();
+    private List<NotificationController> _notificationsDisplayed = new List<NotificationController>();
 
     
     private void Start()
     {
-        notificationsDisplayed = new List<NotificationController>();
+        _notificationsDisplayed = new List<NotificationController>();
     }
 
     public void SpawnNotification()
     {
-        NotificationController notificationController = Instantiate(prefabNotificationController, parentNotifications);
-        notificationController.Init(notificationsDisplayed.Count);
-        notificationsDisplayed.Add(notificationController);
+        NotificationController insertedNotificationController = Instantiate(prefabNotificationController, parentNotifications);
+        insertedNotificationController.Init();
+
+        foreach (var notificationController in _notificationsDisplayed)
+        {
+            notificationController.MoveDown();
+        }
+        
+        _notificationsDisplayed.Insert(0,insertedNotificationController);
         
     }
 
-    public void DeleteNotification()
+    private void DeleteNotification()
     {
-        NotificationController lastNotification = notificationsDisplayed.Last();
-        notificationsDisplayed.Remove(lastNotification);
-        lastNotification.OnDestroy();
+        var lastNotification = RemoveNotification();
+        lastNotification.OnDeleteSpam();
     }
     
+    private void ReadNotification()
+    {
+        var lastNotification = RemoveNotification();
+        lastNotification.OnReadUsefull();
+    }
+
+    private NotificationController RemoveNotification()
+    {
+        NotificationController lastNotification = _notificationsDisplayed.Last();
+        _notificationsDisplayed.Remove(lastNotification);
+        return lastNotification;
+    }
+
     public void OnSwipeHandler(string id)
     {
         switch(id)
@@ -48,7 +66,7 @@ public class NotificationSpawnerController : MonoBehaviour
 
             case DirectionId.ID_LEFT:
                 Debug.Log("OnSwipeHandler::ID_LEFT");
-                DeleteNotification();
+                ReadNotification();
                 break;
 
             case DirectionId.ID_RIGHT:

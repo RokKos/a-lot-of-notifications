@@ -475,3 +475,8 @@ MonoBehaviour:
   rectTransform: {fileID: 5790144318728007580}
   bgImage: {fileID: 6192701198718517442}
   icon: {fileID: 2734371591038868186}
+  size: 106
+  goToLeftDirection: -100
+  goToRightDirection: 100
+  spamColor: {r: 0.6792453, g: 0.06728373, b: 0.06728373, a: 1}
+  usefullColor: {r: 0.1802138, g: 0.8490566, b: 0.11614456, a: 1}
