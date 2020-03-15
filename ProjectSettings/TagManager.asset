@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sheepFence
   - sheepWinPos
+  - sheepKillPos
   layers:
   - Default
   - TransparentFX

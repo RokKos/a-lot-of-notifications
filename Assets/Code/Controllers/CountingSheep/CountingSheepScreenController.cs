@@ -8,9 +8,11 @@ public class CountingSheepScreenController : BaseScreenController
 {
     public GameObject sheepPrefab;
     public TextMeshProUGUI scoreTMP;
-
-    int playerScore = 0;
+    public Transform scoreFeedback;
+    public int playerScore = 0;
     public float timeToReachEnd = 5f;
+    public float timeToSpawn = 2f;
+    public float timeToJump = 1f;
 
     public override void OnScreenEnter()
     {
@@ -27,10 +29,8 @@ public class CountingSheepScreenController : BaseScreenController
 
     public void addCounter()
     {
-
             playerScore++;
-            scoreTMP.text = ("Sheep count: " + playerScore);
-            timeToReachEnd = timeToReachEnd * 0.9f;    
+            scoreTMP.text = ("Sheep count: " + playerScore + "/10");
     }
 
 }

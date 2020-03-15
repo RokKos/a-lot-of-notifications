@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
+
+
 public class sheepController : MonoBehaviour
 {
     [SerializeField] Transform targetLocation = default;
@@ -11,8 +14,15 @@ public class sheepController : MonoBehaviour
     [SerializeField] CountingSheepScreenController miniGameCtrl = default;
 
     [Header("Sheep stats")]
+    [SerializeField] float timeToSpawn = 2f;
     [SerializeField] float timeToEnd = 5f;
     [SerializeField] float timeToJump = 1f;
+
+    [SerializeField] Transform scoreFeedback;
+
+    float orgSpawn;
+    float orgEnd;
+    float orgJump;
     
     
     bool jumped = false;
@@ -20,6 +30,12 @@ public class sheepController : MonoBehaviour
     void Start()
     {
          timeToEnd = miniGameCtrl.timeToReachEnd;
+         timeToSpawn = miniGameCtrl.timeToSpawn;
+         timeToJump = miniGameCtrl.timeToJump;
+
+         orgEnd = miniGameCtrl.timeToReachEnd;
+         orgSpawn = miniGameCtrl.timeToSpawn;
+         orgJump = miniGameCtrl.timeToJump;
     }
 
     public void sheepJump()
@@ -32,33 +48,68 @@ public class sheepController : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().DOJump(jumpLocal, 200f, 1, timeToJump);
             jumped = true;
         }
+
     }
 
     public void initSheep()
     {
-        timeToEnd = timeToEnd * 0.9f;
-        timeToJump = timeToJump * 0.95f;
-        jumped = false;
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-
-
+        
+        //text feedback
+        scoreFeedback.GetComponent<TextMeshProUGUI>().text = "+1";
+        if(miniGameCtrl.playerScore > 0)
+            scoreFeedback.transform.DOPunchScale ( Vector3.one, 0.5f , 3, 1f);
+        
+        //reset ship for spawn animation
         transform.position = sheepSpawnPosition.position;
+        
+        transform.localScale = new Vector3 ( 0f, 0f, 0f );
+        
+        //calculate new timings
+        timeToEnd = timeToEnd * 0.9f;
+        if(timeToEnd <= 2f)
+            timeToEnd = 2f;
 
+        timeToJump = timeToJump * 0.95f;
+        if(timeToJump <= 0.75f)
+            timeToJump = 0.75f;
 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(targetLocation.position);
-        transform.DOMove(targetLocation.position, timeToEnd);
+        timeToSpawn = timeToSpawn * 0.95f;
+        if(timeToSpawn <= 1)
+            timeToSpawn = 1f;
+
+        //reset conditions
+        jumped = false;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        
+        //start spawn animation + walk to end
+        Sequence spawnSequence = DOTween.Sequence()
+            .Append(transform.DOScale(Vector3.one, timeToSpawn))
+            .Append(transform.DOMove(targetLocation.position, timeToEnd))
+            ;
     }
 
     public void resetSheep()
     {
-        timeToEnd = miniGameCtrl.timeToReachEnd;
-        timeToJump = 1f;
-        jumped = false;
+        scoreFeedback.GetComponent<TextMeshProUGUI>().text = "Speed reset!";
+
+        scoreFeedback.transform.DOPunchScale ( new Vector3 (2f, 2f, 2f), 0.75f , 4, 1f);
+
+        timeToEnd = orgEnd;
+        timeToSpawn = orgSpawn;
+        timeToJump = orgJump;
 
         transform.position = sheepSpawnPosition.position;
+        
+        transform.localScale = new Vector3 ( 0f, 0f, 0f );
+        
+        jumped = false;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        
+        Sequence spawnSequence = DOTween.Sequence()
+            .Append(transform.DOScale(Vector3.one, timeToSpawn))
+            .Append(transform.DOMove(targetLocation.position, timeToEnd))
+            ;
 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(targetLocation.position);
-        transform.DOMove(targetLocation.position, timeToEnd);
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
@@ -68,7 +119,7 @@ public class sheepController : MonoBehaviour
             //tween kill -> death animation
             DOTween.Clear();
             
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 
             transform.DOShakeScale(1f, 1, 10, 90);
             transform.DOShakeRotation(1f, 90f, 10, 90f);
@@ -82,14 +133,27 @@ public class sheepController : MonoBehaviour
             //neka animacija z tweeningom?
             Debug.Log("Na win poziciji, ovco posiljamo nazaj");
             miniGameCtrl.addCounter();
+            DOTween.Clear();
             initSheep();
         }
 
-        if(other.CompareTag("sheepKillPos"))
+        if (other.CompareTag("sheepKillPos"))
         {
-            Debug.Log("camera shake and level reset");
-            Camera.main.DOShakeRotation(0.2f, 25f, 2, 25f, true);
+            DOTween.Clear();
+            resetSheep();
         }
+    }
+
+
+    private void OnBecameInvisible() {
+        transform.localScale = new Vector3 ( 0f, 0f, 0f );
+        //Debug.Log
+        initSheep();
+    }
+
+    private void Update() {
+        var anim = GetComponent<Animator>();
+        anim.SetBool("jumped", jumped);
     }
 
 }
