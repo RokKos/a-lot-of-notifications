@@ -1,8 +1,10 @@
 Sender Name,Short Description,Icon ID,Type
-CEO,Urgent meeting with your supervisor,0,Good
-Steam,An item on your Steam wishlist is on sale!,1,Medium
-xxxSinglesxxx,Single ladies in your area,2,Bad
+CEO,Urgent meeting with your supervisor,2,Good
+Stream,An item on your Steam wishlist is on sale!,1,Medium
+xxxSinglesxxx,Single ladies in your area,7,Bad
 Manager,Teamm daily meeting,0,Good
 Your Dad,Your Dad send you cringe meme,3,Medium
-Udemy,We’ve got some new Design course recommendations for you!,4,Medium
-Etiopian prince,I need to transfer 3M worth of gold over western union,5,Bad
+Ademy,We’ve got some new Design course recommendations for you!,5,Medium
+Etiopian prince,I need to transfer 3M worth of gold over western union,9,Bad
+Ganges,Have a look at this great targeted ad! You will love it!!!,10,Bad
+Accounting Amy,Hey! Have you heard that Programmer Paul and bla bla bla...,2,Medium

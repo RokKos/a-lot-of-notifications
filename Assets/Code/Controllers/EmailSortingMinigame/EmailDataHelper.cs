@@ -50,7 +50,7 @@ public class EmailDataHelper : MonoBehaviour
 
     public static int GetIconId()
     {
-        return GetIntValue(data[_currNotification][KShortDescriptionIndex]);
+        return GetIntValue(data[_currNotification][KIconIDIndex]);
     }
     
     public static string GetType()

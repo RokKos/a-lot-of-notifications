@@ -28,9 +28,18 @@ public class NotificationSpawnerController : MonoBehaviour
         {
             notificationController.MoveDown();
         }
-        
-        _notificationsDisplayed.Insert(0,insertedNotificationController);
-        
+
+        if (_notificationsDisplayed.Count == 0)
+        {
+            _notificationsDisplayed.Add(insertedNotificationController);
+        }
+        else
+        {
+            _notificationsDisplayed.Insert(0,insertedNotificationController);
+        }
+
+
+
     }
 
     private void DeleteNotification()

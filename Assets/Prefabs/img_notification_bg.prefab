@@ -65,8 +65,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 19.1
+  m_fontSize: 18.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -220,8 +220,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Rita Smita
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 21.75
+  m_fontSize: 20.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -368,12 +368,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22745098, g: 0.22352941, b: 0.34509805, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d517d0f3969d6f4baebbed72ef65f23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56f42c4c13a04fb4ea6cfa4a7bdd6179, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -488,3 +488,15 @@ MonoBehaviour:
   - {r: 0.19607843, g: 0.47218764, b: 0.47218764, a: 0}
   - {r: 0.9019608, g: 0.4600951, b: 0.14117648, a: 0}
   - {r: 0.9764706, g: 0.69331014, b: 0.754717, a: 0}
+  possibleIcons:
+  - {fileID: 21300000, guid: 2d517d0f3969d6f4baebbed72ef65f23, type: 3}
+  - {fileID: 21300000, guid: e7c325b3d0019bc4c853cf9e5549a552, type: 3}
+  - {fileID: 21300000, guid: 56f42c4c13a04fb4ea6cfa4a7bdd6179, type: 3}
+  - {fileID: 21300000, guid: 508f05df8012ffc47b614d767c8cc3b4, type: 3}
+  - {fileID: 21300000, guid: ff246dad165be6049ad9b784441e2526, type: 3}
+  - {fileID: 21300000, guid: f0de61ff1f0c3894eb8822a9857eb4d7, type: 3}
+  - {fileID: 21300000, guid: f18a43173139dc34d87c3ac225a27af0, type: 3}
+  - {fileID: 21300000, guid: 8c621f39d63a4c54688c2ef55c077aac, type: 3}
+  - {fileID: 21300000, guid: db8aa298c10511e4084c6964def12b0a, type: 3}
+  - {fileID: 21300000, guid: ac853f34df9591140821e1337169787d, type: 3}
+  - {fileID: 21300000, guid: 6416efd5f0a64e042bbecb34c4b99bc0, type: 3}
