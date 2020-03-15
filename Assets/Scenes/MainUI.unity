@@ -313,6 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneScreenBg: {fileID: 1604849918}
+  cakeBgElem: {fileID: 958357620}
+  bedBgElem: {fileID: 1707345367}
   workMeter: {fileID: 5303249277138726560}
   socialMeter: {fileID: 5303249277138726561}
   healthMeter: {fileID: 5303249277138726562}

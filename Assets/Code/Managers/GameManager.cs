@@ -227,7 +227,13 @@ public class GameManager : MonoBehaviour
             uiManager.ChangeHealthMeter(_healthMeterProcent);
         }
     }
-    
+
+    private void UpdateBG()
+    {
+        uiManager.EnableBedBgElement(_healthMeterProcent < 300.0f);
+        uiManager.EnableCakeBgElement(_socialMeterProcent < 300.0f);
+    }
+
     private IEnumerator DecressMetters()
     {
         while(true)
@@ -236,6 +242,7 @@ public class GameManager : MonoBehaviour
             _socialMeterProcent -= rateOfMeterDropping;
             _healthMeterProcent -= rateOfMeterDropping;
             UpdateMeters();
+            UpdateBG();
             yield return new WaitForSeconds(timeIntervalOfDropping);
             
         }
