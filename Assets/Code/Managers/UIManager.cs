@@ -14,4 +14,19 @@ public class UIManager : MonoBehaviour
       phoneScreenBg.color = bgColor;
       phoneScreenBg.DOFade(1.0f, 1.00f);
    }
+
+   public void ChangeWorkMeter(int diff)
+   {
+      
+   }
+   
+   public void ChangeSocialMeter(int diff)
+   {
+      
+   }
+   
+   public void ChangeHealthMeter(int diff)
+   {
+      
+   }
 }

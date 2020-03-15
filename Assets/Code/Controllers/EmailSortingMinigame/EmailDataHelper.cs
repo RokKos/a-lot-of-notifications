@@ -62,7 +62,7 @@ public class EmailDataHelper : MonoBehaviour
     {
         int change = 0;
         int sing = 1;
-        Debug.Log(s);
+        //Debug.Log(s);
         if (s.Substring(0, 1) == "−")
         {
             sing = -1;

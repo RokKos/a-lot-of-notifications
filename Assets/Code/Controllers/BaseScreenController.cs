@@ -21,6 +21,9 @@ public class BaseScreenController : MonoBehaviour
     [SerializeField] public Color bgColor = Color.magenta;
         
     private int _minigameScore = 0;
+    
+    public delegate void ExitMinigame();
+    public ExitMinigame exitMinigame;
     protected virtual void AddScore(int score) {
         _minigameScore += score;
         Debug.Log("Score is now:" + _minigameScore.ToString("D") + " increased by: " + score.ToString("D"));

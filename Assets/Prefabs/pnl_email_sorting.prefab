@@ -211,6 +211,22 @@ MonoBehaviour:
   bgColor: {r: 0.84705883, g: 0.84705883, b: 0.9882353, a: 1}
   spamTime: 0.5
   notificationSpawnerController: {fileID: 1151570459549038982}
+  notificationSpawnerTimes:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 4
+  - 3
+  - 3
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 1
+  - 1
+  - 1
 --- !u!1 &6402464477121708361
 GameObject:
   m_ObjectHideFlags: 0

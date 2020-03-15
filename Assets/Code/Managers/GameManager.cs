@@ -119,13 +119,42 @@ public class GameManager : MonoBehaviour
     {
         _currScreenController.OnScreenExit();
         _currScreenController.OnScreenDisable();
-
+        _currScreenController.exitMinigame -= ForceExitMinigame;
+            
         _prevScreenController = _currScreenController;
         _currScreenController = FindScreen(screenType);
 
         uiManager.ChangeBgColor(_currScreenController.bgColor);
+        _currScreenController.exitMinigame += ForceExitMinigame;
+        
         _currScreenController.OnScreenEnable();
         _currScreenController.OnScreenEnter();
+    }
+
+    private void ForceExitMinigame()
+    {
+        switch (_currScreenController.GetScreenType())
+        {
+            case ScreenTypes.EmailSortingScreen:
+            {
+                uiManager.ChangeWorkMeter(_currScreenController.GetMiniGameScore());
+                break;
+            }
+            
+            case ScreenTypes.ClickerScreen:
+            {
+                uiManager.ChangeSocialMeter(_currScreenController.GetMiniGameScore());
+                break;
+            }
+            
+            case ScreenTypes.CountingScreen:
+            {
+                uiManager.ChangeHealthMeter(_currScreenController.GetMiniGameScore());
+                break;
+            }
+            
+        }
+        SendEvent("Back");
     }
 
     void HandleBackButton()
@@ -134,12 +163,15 @@ public class GameManager : MonoBehaviour
         {
             _currScreenController.OnScreenExit();
             _currScreenController.OnScreenDisable();
+            _currScreenController.exitMinigame -= ForceExitMinigame;
 
             uiManager.ChangeBgColor(_prevScreenController.bgColor);
             _prevScreenController.OnScreenEnable();
             _prevScreenController.OnScreenEnter();
             
             _currScreenController = _prevScreenController;
+            
+            _currScreenController.exitMinigame += ForceExitMinigame;
             _prevScreenController = null;
         }
         else
