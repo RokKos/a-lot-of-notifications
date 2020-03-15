@@ -45,20 +45,73 @@ public class NotificationSpawnerController : MonoBehaviour
     private void DeleteNotification()
     {
         var lastNotification = RemoveNotification();
-        lastNotification.OnDeleteSpam();
+        if (lastNotification != null)
+        {
+            lastNotification.OnDeleteSpam();
+
+            switch (lastNotification.type)
+            {
+                case NotificationType.Bad:
+                {
+                    correctAction(0);
+                    break;
+                }
+
+                case NotificationType.Medium:
+                {
+                    incorectAction(25);
+                    break;
+                }
+
+                case NotificationType.Good:
+                {
+                    incorectAction(100);
+                    break;
+                }
+            }
+        }
     }
     
     private void ReadNotification()
     {
         var lastNotification = RemoveNotification();
-        lastNotification.OnReadUsefull();
+        if (lastNotification != null)
+        {
+            lastNotification.OnReadUsefull();
+
+            switch (lastNotification.type)
+            {
+                case NotificationType.Bad:
+                {
+                    incorectAction(50);
+                    break;
+                }
+
+                case NotificationType.Medium:
+                {
+                    correctAction(25);
+                    break;
+                }
+
+                case NotificationType.Good:
+                {
+                    correctAction(100);
+                    break;
+                }
+            }
+        }
     }
 
     private NotificationController RemoveNotification()
     {
-        NotificationController lastNotification = _notificationsDisplayed.Last();
-        _notificationsDisplayed.Remove(lastNotification);
-        return lastNotification;
+        if (_notificationsDisplayed.Count > 0)
+        {
+            NotificationController lastNotification = _notificationsDisplayed.Last();
+            _notificationsDisplayed.Remove(lastNotification);
+            return lastNotification;
+        }
+
+        return null;
     }
 
     public void OnSwipeHandler(string id)
