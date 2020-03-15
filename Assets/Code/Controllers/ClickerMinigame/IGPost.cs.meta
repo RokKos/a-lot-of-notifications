@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dbcc4420746912e4aba843a41c4ab628
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Image: {instanceID: 0}
+  - Avatar: {instanceID: 0}
+  - postPrefab: {fileID: 1916468862284371776, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+      type: 3}
+  - go: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

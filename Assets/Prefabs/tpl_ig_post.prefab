@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6312672524161980005}
   - component: {fileID: 3237228010185923942}
   - component: {fileID: 6673289504995875195}
+  - component: {fileID: 6929562757296118653}
   m_Layer: 5
   m_Name: tpl_ig_post
   m_TagString: Untagged
@@ -25,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916468862284371776}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -42,7 +43,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -700}
   m_SizeDelta: {x: 0, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3237228010185923942
@@ -81,6 +82,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6929562757296118653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916468862284371776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcc4420746912e4aba843a41c4ab628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Username: hello world
+  Likes: 3141529
+  Text: Lorem ipsum dolor sit amnet
+  Image: {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
+  Avatar: {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
+  Number: 1
 --- !u!1 &2813361716221334622
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +238,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -230,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 925.420 likes
+  m_Text: 3.141.529
 --- !u!1 &4076233744888833024
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +262,7 @@ GameObject:
   - component: {fileID: 6448230117258508075}
   - component: {fileID: 1306434796256074259}
   m_Layer: 5
-  m_Name: username_top
+  m_Name: Username
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: yousername
+  m_Text: hello world
 --- !u!1 &5102008817874052153
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +339,7 @@ GameObject:
   - component: {fileID: 6052205452168547424}
   - component: {fileID: 1114780798134908764}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Avatar image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +412,7 @@ GameObject:
   - component: {fileID: 8621971003810792054}
   - component: {fileID: 6932375835636534201}
   m_Layer: 5
-  m_Name: Like number (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +465,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -457,9 +476,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <b>yousername</b> Spicy jalapeno bacon ipsum dolor amet ribeye chicken pork
-    loin, brisket buffalo t-bone tongue shoulder landjaeger tri-tip fatback kevin
-    shankle tenderloin.
+  m_Text: <b>hello world</b> Lorem ipsum dolor sit amnet
 --- !u!1 &6257769085111413862
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +593,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8995475855256725491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6929562757296118653}
+        m_MethodName: likeClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6640881122100473013
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +618,7 @@ GameObject:
   - component: {fileID: 513220230184345205}
   - component: {fileID: 9155525917364620975}
   m_Layer: 5
-  m_Name: btn_like (1)
+  m_Name: btn_comment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +735,7 @@ GameObject:
   - component: {fileID: 7956927608699245185}
   - component: {fileID: 3171429638504950569}
   m_Layer: 5
-  m_Name: btn_like (2)
+  m_Name: btn_save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

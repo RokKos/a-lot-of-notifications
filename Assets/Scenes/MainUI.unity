@@ -1346,17 +1346,17 @@ PrefabInstance:
     - target: {fileID: 908836353182533606, guid: 19ca67490fa6b6641b7aa485e5289b2f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 908836353182533606, guid: 19ca67490fa6b6641b7aa485e5289b2f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.099853516
       objectReference: {fileID: 0}
     - target: {fileID: 908836353182533606, guid: 19ca67490fa6b6641b7aa485e5289b2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 2.28
       objectReference: {fileID: 0}
     - target: {fileID: 908836353182533606, guid: 19ca67490fa6b6641b7aa485e5289b2f,
         type: 3}
@@ -1392,6 +1392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399534169616094978, guid: 19ca67490fa6b6641b7aa485e5289b2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ca67490fa6b6641b7aa485e5289b2f, type: 3}
@@ -1669,6 +1674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pnl_counting_sheep
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140184262307346083, guid: 2419860fe998da941b99138eeaad5091,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2419860fe998da941b99138eeaad5091, type: 3}
