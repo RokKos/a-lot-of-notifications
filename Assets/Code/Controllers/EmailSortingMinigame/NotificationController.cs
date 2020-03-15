@@ -17,14 +17,13 @@ public class NotificationController : MonoBehaviour
     [SerializeField] private float size = 106.0f;
     [SerializeField] private float goToLeftDirection = -100.0f;
     [SerializeField] private float goToRightDirection = 100.0f;
+    
+    [Header("Colors")]
     [SerializeField] private Color spamColor = Color.black;
     [SerializeField] private Color usefullColor = Color.black;
-
     
-    readonly List<Color> possibleColors = new List<Color>()
-    {
-        Color.cyan, Color.magenta, Color.red, Color.blue, Color.green
-    };
+    [SerializeField] private List<Color> possibleColors = new List<Color>();
+    
     
     public void Init()
     {
