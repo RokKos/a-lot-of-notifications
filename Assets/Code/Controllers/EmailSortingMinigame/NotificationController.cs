@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -12,6 +13,12 @@ public class NotificationController : MonoBehaviour
     [SerializeField] private RectTransform rectTransform = null;
     [SerializeField] private Image bgImage = null;
     [SerializeField] private Image icon = null;
+    
+    
+    [Header("Text")]
+    [SerializeField] private TextMeshProUGUI txtEmailSender = null;
+    [SerializeField] private TextMeshProUGUI txtShortDescription = null;
+
     
     [Header("Numbers")]
     [SerializeField] private float size = 106.0f;
@@ -41,6 +48,10 @@ public class NotificationController : MonoBehaviour
         bgColor.a = 0;
         bgImage.color = bgColor;
         bgImage.DOFade(1.0f, 0.35f);
+        
+        EmailDataHelper.SelectNotification();
+        txtEmailSender.text = EmailDataHelper.GetEmailSenderText();
+        txtShortDescription.text = EmailDataHelper.GetShortDescriptionText();
     }
 
     public void MoveDown()

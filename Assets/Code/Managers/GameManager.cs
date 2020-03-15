@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager = null;
     [SerializeField] private List<BaseScreenController> baseScreenControllers = new List<BaseScreenController>();
+    [SerializeField] EmailDataHelper emailDataHelper = null;
 
     private BaseScreenController _currScreenController = null;
     private BaseScreenController _prevScreenController = null;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         _prevScreenController = null;
         
         DOTween.Init(true, true, LogBehaviour.Default);
+        emailDataHelper.ReloadCardData(false);
     }
 
 

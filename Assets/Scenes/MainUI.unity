@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 733618762}
   - component: {fileID: 733618761}
   - component: {fileID: 733618763}
+  - component: {fileID: 733618764}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -282,6 +283,7 @@ MonoBehaviour:
   - {fileID: 4345126671002977905}
   - {fileID: 5475323398528006232}
   - {fileID: 3536691217655603275}
+  emailDataHelper: {fileID: 733618764}
 --- !u!4 &733618762
 Transform:
   m_ObjectHideFlags: 0
@@ -309,6 +311,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneScreenBg: {fileID: 1604849918}
+--- !u!114 &733618764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733618760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34321d08d0ef2846ad19e066a5a338b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &775441264 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5298465019132484342, guid: 863ca16b62848b34b9ce20a26efe8c36,
