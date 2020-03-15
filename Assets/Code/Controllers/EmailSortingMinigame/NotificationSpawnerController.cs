@@ -20,7 +20,7 @@ public class NotificationSpawnerController : MonoBehaviour
     public delegate void IncorectAction(int penalty);
     public IncorectAction incorectAction;
     
-    private void Start()
+    private void Awake()
     {
         _notificationsDisplayed = new List<NotificationController>();
     }
