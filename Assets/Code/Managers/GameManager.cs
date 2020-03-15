@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
             _currScreenController.OnScreenExit();
             _currScreenController.OnScreenDisable();
 
+            uiManager.ChangeBgColor(_prevScreenController.bgColor);
             _prevScreenController.OnScreenEnable();
             _prevScreenController.OnScreenEnter();
             
