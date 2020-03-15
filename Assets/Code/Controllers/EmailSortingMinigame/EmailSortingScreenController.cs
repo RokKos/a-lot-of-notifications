@@ -12,6 +12,17 @@ public class EmailSortingScreenController : BaseScreenController
     {
         base.OnScreenEnter();
         StartCoroutine (SpamNotifications());
+
+        notificationSpawnerController.correctAction += AddScore;
+        notificationSpawnerController.incorectAction += SubstractScore;
+    }
+
+    public override void OnScreenExit()
+    {
+        base.OnScreenExit();
+        notificationSpawnerController.correctAction -= AddScore;
+        notificationSpawnerController.incorectAction -= SubstractScore;
+        
     }
 
     private IEnumerator SpamNotifications()

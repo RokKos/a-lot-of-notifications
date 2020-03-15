@@ -12,7 +12,7 @@ public class EmailDataHelper : MonoBehaviour
     private const int KEmailSenderIndex = 0;
     private const int KShortDescriptionIndex = 1;
     private const int KIconIDIndex = 2;
-    private const int KTypeIndex = 2;
+    private const int KTypeIndex = 3;
 
 
     private const string KGDocID = "1ZMW6Aqlu3leX_RtEEBetpmrZTJ31uU_K0fv2G-2ZeYQ";

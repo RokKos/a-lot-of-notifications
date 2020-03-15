@@ -19,6 +19,21 @@ public class BaseScreenController : MonoBehaviour
     
     [Header("Properties")]
     [SerializeField] public Color bgColor = Color.magenta;
+        
+    private int _minigameScore = 0;
+    protected virtual void AddScore(int score) {
+        _minigameScore += score;
+        Debug.Log("Score is now:" + _minigameScore.ToString("D") + " increased by: " + score.ToString("D"));
+    }
+    
+    protected virtual void SubstractScore(int score) {
+            _minigameScore -= score;
+            Debug.Log("Score is now:" + _minigameScore.ToString("D") + " Decrease by: " + score.ToString("D"));
+        }
+    
+    public int GetMiniGameScore() {
+        return _minigameScore;
+    }
     
     public ScreenTypes GetScreenType() {
         return screenType;
@@ -46,6 +61,7 @@ public class BaseScreenController : MonoBehaviour
     {
         Debug.Log(screenType.ToString("F") + "::OnScreenEnable()");
         this.gameObject.SetActive(true);
+        _minigameScore = 0;
     }
     
     public virtual void OnScreenDisable()

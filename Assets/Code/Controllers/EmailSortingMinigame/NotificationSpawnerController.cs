@@ -14,6 +14,12 @@ public class NotificationSpawnerController : MonoBehaviour
     private List<NotificationController> _notificationsDisplayed = new List<NotificationController>();
 
     
+    public delegate void CorrectAction(int bonus);
+    public CorrectAction correctAction;
+    
+    public delegate void IncorectAction(int penalty);
+    public IncorectAction incorectAction;
+    
     private void Start()
     {
         _notificationsDisplayed = new List<NotificationController>();

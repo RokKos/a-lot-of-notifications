@@ -7,6 +7,13 @@ using TMPro;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
+public enum NotificationType
+{
+    Bad = 0,
+    Medium = 1,
+    Good
+}
+
 public class NotificationController : MonoBehaviour
 {
     [Header("Properties")]
@@ -31,7 +38,9 @@ public class NotificationController : MonoBehaviour
     
     [SerializeField] private List<Color> possibleColors = new List<Color>();
     [SerializeField] private List<Sprite> possibleIcons = new List<Sprite>();
-    
+
+
+    public NotificationType type = NotificationType.Medium;
     
     public void Init()
     {
@@ -47,6 +56,30 @@ public class NotificationController : MonoBehaviour
         
         txtEmailSender.text = EmailDataHelper.GetEmailSenderText();
         txtShortDescription.text = EmailDataHelper.GetShortDescriptionText();
+
+        type = ConvertFromStr(EmailDataHelper.GetType());
+    }
+
+    private NotificationType ConvertFromStr(string str)
+    {
+        if (str == "Bad")
+        {
+            return NotificationType.Bad;
+        }
+        
+        if (str == "Medium")
+        {
+            return NotificationType.Medium;
+        }
+        
+        if (str == "Good")
+        {
+            return NotificationType.Good;
+        }
+        
+        Debug.Log("Wrong text from DATA");
+        return NotificationType.Medium;
+
     }
 
     private void SetPosition()

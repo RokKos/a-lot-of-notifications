@@ -1,10 +1,16 @@
-Sender Name,Short Description,Icon ID,Type
-CEO,Urgent meeting with your supervisor,2,Good
-Stream,An item on your Steam wishlist is on sale!,1,Medium
-xxxSinglesxxx,Single ladies in your area,7,Bad
-Manager,Teamm daily meeting,0,Good
-Your Dad,Your Dad send you cringe meme,3,Medium
-Ademy,We’ve got some new Design course recommendations for you!,5,Medium
-Etiopian prince,I need to transfer 3M worth of gold over western union,9,Bad
-Ganges,Have a look at this great targeted ad! You will love it!!!,10,Bad
-Accounting Amy,Hey! Have you heard that Programmer Paul and bla bla bla...,2,Medium
+Sender Name,Short Description,Icon ID,Type,,,,,,
+CEO,Urgent meeting with your supervisor,2,Good,,,,,,
+Stream,An item on your Steam wishlist is on sale!,1,Medium,,,,,,
+xxxSinglesxxx,Single ladies in your area,7,Bad,,,,,,
+Manager,Teamm daily meeting,0,Good,,,,,,
+Your Dad,Your Dad send you cringe meme,3,Medium,,Total number of entries,Good,Medium,Bad,
+Ademy,We’ve got some new Design course recommendations for you!,5,Medium,,15,3,8,4,
+Etiopian prince,I need to transfer 3M worth of gold over western union,9,Bad,,,"1,5",9,"4,5",How much do we need
+Ganges,Have a look at this great targeted ad! You will love it!!!,10,Bad,,,,,,
+Accounting Amy,Hey! Have you heard that Programmer Paul and bla bla bla...,6,Medium,,,,,,
+Slovenia Games,Slovenia Games: News & Updates for February 2020,0,Medium,,,,,,
+NVIDIA Developer,Latest Developer News from NVIDIA,1,Medium,,,,,,
+GOG.COM,"Redeem your EXCLUSIVE discount code for Caesar, Cleopatra, Zeus and Emperor",4,Medium,,,,,,
+Kickstarter,Projects We Love: Tech meets textiles,10,Medium,,,,,,
+Kamanda Koroma,I need you to move 1000 Carats of polished Diamonds,8,Bad,,,,,,
+QA Lead,CRASH: Null pointer! Currupted data,6,Good,,,,,,
