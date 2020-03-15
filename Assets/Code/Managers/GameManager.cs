@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -21,6 +20,10 @@ public class GameManager : MonoBehaviour
     private BaseScreenController _currScreenController = null;
     private BaseScreenController _prevScreenController = null;
 
+    
+    private float _workMeterProcent = 500.0f;
+    private float _socialMeterProcent = 500.0f;
+    private float _healthMeterProcent = 500.0f;
 
     void Start()
     {
@@ -36,6 +39,11 @@ public class GameManager : MonoBehaviour
         
         DOTween.Init(true, true, LogBehaviour.Default);
         emailDataHelper.ReloadCardData(false);
+        
+        uiManager.ChangeWorkMeter(_workMeterProcent);
+        uiManager.ChangeSocialMeter(_socialMeterProcent);
+        uiManager.ChangeHealthMeter(_healthMeterProcent);
+
     }
 
 
@@ -137,19 +145,26 @@ public class GameManager : MonoBehaviour
         {
             case ScreenTypes.EmailSortingScreen:
             {
-                uiManager.ChangeWorkMeter(_currScreenController.GetMiniGameScore());
+                _workMeterProcent += _currScreenController.GetMiniGameScore();
+                _workMeterProcent = Mathf.Max(0.0f,Mathf.Min(1000.0f, _workMeterProcent));
+                
+                uiManager.ChangeWorkMeter(_workMeterProcent);
                 break;
             }
             
             case ScreenTypes.ClickerScreen:
             {
-                uiManager.ChangeSocialMeter(_currScreenController.GetMiniGameScore());
+                _socialMeterProcent += _currScreenController.GetMiniGameScore();
+                _socialMeterProcent = Mathf.Max(0.0f,Mathf.Min(1000.0f, _socialMeterProcent));
+                uiManager.ChangeSocialMeter(_socialMeterProcent);
                 break;
             }
             
             case ScreenTypes.CountingScreen:
             {
-                uiManager.ChangeHealthMeter(_currScreenController.GetMiniGameScore());
+                _healthMeterProcent += _currScreenController.GetMiniGameScore();
+                _healthMeterProcent = Mathf.Max(0.0f,Mathf.Min(1000.0f, _healthMeterProcent));
+                uiManager.ChangeSocialMeter(_healthMeterProcent);
                 break;
             }
             

@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1981875763918202129}
   - component: {fileID: 1839787211104569249}
+  - component: {fileID: 5148500651672145993}
   m_Layer: 5
   m_Name: holder_icon
   m_TagString: Untagged
@@ -152,6 +153,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5148500651672145993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134536234996565721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349a19066862127449ddb06d8880e2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  minBarValue: 0
+  maxBarValue: 330
 --- !u!1 &8536296620441050592
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +325,7 @@ GameObject:
   - component: {fileID: 7821796244637525058}
   - component: {fileID: 8580152884444623161}
   - component: {fileID: 3677278254132026241}
+  - component: {fileID: 2497385840822164473}
   m_Layer: 5
   m_Name: widget_parent
   m_TagString: Untagged
@@ -382,3 +399,18 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &2497385840822164473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053411803785637746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349a19066862127449ddb06d8880e2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 5550847708418944512}
+  minBarValue: 0
+  maxBarValue: 330
