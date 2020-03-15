@@ -10,7 +10,7 @@ public class ProgressBarController : MonoBehaviour
     [SerializeField] private float maxBarValue = 330.0f;
     [SerializeField] private float speedOfAnimating = 3.0f;
 
-
+    private bool isAnimating = false;
 
     public void SetBarProcent(float procent)
     {
@@ -20,6 +20,12 @@ public class ProgressBarController : MonoBehaviour
     
     private IEnumerator AnimateMetter(float start, float end)
     {
+        if (isAnimating)
+        {
+            yield break;
+        }
+
+        isAnimating = true;
         if (start < end)
         {
             for (float progress = end; progress > start; progress -= speedOfAnimating)
@@ -38,7 +44,7 @@ public class ProgressBarController : MonoBehaviour
 
             }
         }
-
+        isAnimating = false;
         rectTransform.offsetMax = new Vector2(end, 0);
     }
 }
