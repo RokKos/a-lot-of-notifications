@@ -14,6 +14,7 @@ public enum EventType
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private UIManager uiManager = null;
     [SerializeField] private List<BaseScreenController> baseScreenControllers = new List<BaseScreenController>();
 
     private BaseScreenController _currScreenController = null;
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour
         _prevScreenController = _currScreenController;
         _currScreenController = FindScreen(screenType);
 
+        uiManager.ChangeBgColor(_currScreenController.bgColor);
         _currScreenController.OnScreenEnable();
         _currScreenController.OnScreenEnter();
     }
