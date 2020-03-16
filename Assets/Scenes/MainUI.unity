@@ -1017,6 +1017,7 @@ MonoBehaviour:
   workMeter: {fileID: 5303249277138726560}
   socialMeter: {fileID: 5303249277138726561}
   healthMeter: {fileID: 5303249277138726562}
+  pnl_main: {fileID: 796538701}
 --- !u!114 &733618764
 MonoBehaviour:
   m_ObjectHideFlags: 0

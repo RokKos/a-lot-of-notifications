@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
    [SerializeField] private ProgressBarController socialMeter = null;
    [SerializeField] private ProgressBarController healthMeter = null;
    
+   [SerializeField] private GameObject pnl_main = null;
+   
    
    public void ChangeBgColor(Color bgColor)
    {
@@ -26,17 +28,23 @@ public class UIManager : MonoBehaviour
 
    public void ChangeWorkMeter(float diff)
    {
-      workMeter.SetBarProcent(diff / 1000.0f);
+      if (workMeter.gameObject.activeSelf && pnl_main.activeSelf) {    
+         workMeter.SetBarProcent(diff / 1000.0f);
+      }
    }
    
    public void ChangeSocialMeter(float diff)
    {
-      socialMeter.SetBarProcent(diff / 1000.0f);
+      if (socialMeter.gameObject.activeSelf && pnl_main.activeSelf) {
+         socialMeter.SetBarProcent(diff / 1000.0f);
+      }
    }
    
    public void ChangeHealthMeter(float diff)
    {
-      healthMeter.SetBarProcent(diff / 1000.0f);
+      if (healthMeter.gameObject.activeSelf && pnl_main.activeSelf) {
+         healthMeter.SetBarProcent(diff / 1000.0f);
+      }
    }
 
    public void EnableBedBgElement(bool enable)
