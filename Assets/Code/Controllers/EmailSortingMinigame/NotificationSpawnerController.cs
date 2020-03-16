@@ -61,18 +61,21 @@ public class NotificationSpawnerController : MonoBehaviour
                 case NotificationType.Bad:
                 {
                     correctAction(0);
+                    FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("+ Work");
                     break;
                 }
 
                 case NotificationType.Medium:
                 {
                     incorectAction(25);
+                    FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("--Work");
                     break;
                 }
 
                 case NotificationType.Good:
                 {
                     incorectAction(100);
+                    FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("--- Work");
                     break;
                 }
             }
@@ -92,18 +95,21 @@ public class NotificationSpawnerController : MonoBehaviour
                 case NotificationType.Bad:
                 {
                     incorectAction(50);
+                    FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("-- Work");
                     break;
                 }
 
                 case NotificationType.Medium:
                 {
                     correctAction(25);
+                    FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("++ Work");
                     break;
                 }
 
                 case NotificationType.Good:
                 {
                     correctAction(100);
+                    FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("+++ Work");
                     break;
                 }
             }

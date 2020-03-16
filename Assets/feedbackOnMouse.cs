@@ -20,7 +20,10 @@ public class feedbackOnMouse : MonoBehaviour
     public void PunchPositiveFeedback(string feedbackMsg)
     {
         feedbackText.text = feedbackMsg;
-        transform.DOPunchScale(Vector3.one, 0.2f, 4, 1);
+        DOTween.Sequence()
+            .Append(transform.DOPunchScale(new Vector3(1.3f,1.3f,1.3f), 1.2f, 1, 1))
+            .Append(transform.DOScale(Vector3.one, 0.2f));
+        
     }
 
 

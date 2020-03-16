@@ -271,6 +271,11 @@ public class GameManager : MonoBehaviour
                 _healthMeterProcent -= rateOfMeterDropping;
             }
 
+            if (_workMeterProcent < 1 || _socialMeterProcent < 1 || _healthMeterProcent < 1)
+            {
+                Debug.Log("You lose");
+            }
+
             UpdateMeters();
             UpdateBG();
             yield return new WaitForSeconds(timeIntervalOfDropping);
