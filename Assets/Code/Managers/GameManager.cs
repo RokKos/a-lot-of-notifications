@@ -149,7 +149,11 @@ public class GameManager : MonoBehaviour
                 _workMeterProcent += _currScreenController.GetMiniGameScore();
                 _workMeterProcent = Mathf.Max(0.0f,Mathf.Min(1000.0f, _workMeterProcent));
                 
-                uiManager.ChangeWorkMeter(_workMeterProcent);
+                if (_currScreenController.GetScreenType() == ScreenTypes.HomeScreen)
+                {
+                    uiManager.ChangeWorkMeter(_workMeterProcent); 
+                }
+                
                 break;
             }
             
@@ -157,7 +161,11 @@ public class GameManager : MonoBehaviour
             {
                 _socialMeterProcent += _currScreenController.GetMiniGameScore();
                 _socialMeterProcent = Mathf.Max(0.0f,Mathf.Min(1000.0f, _socialMeterProcent));
-                uiManager.ChangeSocialMeter(_socialMeterProcent);
+                if (_currScreenController.GetScreenType() == ScreenTypes.HomeScreen)
+                {
+                    uiManager.ChangeSocialMeter(_socialMeterProcent);
+                }
+
                 break;
             }
             
@@ -165,7 +173,11 @@ public class GameManager : MonoBehaviour
             {
                 _healthMeterProcent += _currScreenController.GetMiniGameScore();
                 _healthMeterProcent = Mathf.Max(0.0f,Mathf.Min(1000.0f, _healthMeterProcent));
-                uiManager.ChangeSocialMeter(_healthMeterProcent);
+                if (_currScreenController.GetScreenType() == ScreenTypes.HomeScreen)
+                {
+                    uiManager.ChangeSocialMeter(_healthMeterProcent);
+                }
+
                 break;
             }
             
