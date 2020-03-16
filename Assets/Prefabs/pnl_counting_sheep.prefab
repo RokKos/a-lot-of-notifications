@@ -30,11 +30,11 @@ RectTransform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 8954853759805411265}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215, y: -351}
+  m_AnchoredPosition: {x: 196, y: -354}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164756039241721060
@@ -216,11 +216,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8954853759805411265}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: -31}
+  m_AnchoredPosition: {x: 239, y: -31}
   m_SizeDelta: {x: 335, y: 182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &439074838508246005
@@ -359,9 +359,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5693224929667119441}
-  - {fileID: 11476196900588388}
+  - {fileID: 3347725583160478806}
   - {fileID: 7663789497154908576}
   - {fileID: 1870977564343063495}
+  - {fileID: 2866543833352870726}
   m_Father: {fileID: 8176040985118723872}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -398,7 +399,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4728477184965818303}
-  - {fileID: 2866543833352870726}
   - {fileID: 370929325031891300}
   - {fileID: 7091995133525304268}
   m_Father: {fileID: 8176040985118723872}
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1080,6 +1080,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abb35ef293de1f4092033ceee17b50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteSet:
+    m_HighlightedSprite: {fileID: 21300000, guid: a54bec352a8b9ef4ea94aa72b6838086,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 54071069178558045ad82c84c51c986f, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a54bec352a8b9ef4ea94aa72b6838086, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: a54bec352a8b9ef4ea94aa72b6838086, type: 3}
+  button: {fileID: 3041259142284440984}
 --- !u!61 &7649533569736511411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1170,16 +1177,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7030239318746575189}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.32}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.3199997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8954853759805411265}
-  m_RootOrder: 1
+  m_Father: {fileID: 5926607470640723641}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -134, y: -138}
+  m_AnchoredPosition: {x: -110, y: -484}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3029897839954826501
@@ -1250,7 +1257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220, y: -445}
+  m_AnchoredPosition: {x: 174.1, y: -445}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7812515680057795181
@@ -1330,7 +1337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199, y: 185}
+  m_AnchoredPosition: {x: 151, y: 179}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4296216666437884801
@@ -1559,12 +1566,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5926607470640723641}
-  m_RootOrder: 1
+  m_Father: {fileID: 3347725583160478806}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54, y: -443}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 64, y: 169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3006666214135675933
@@ -1629,6 +1636,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 50, y: 225}
   m_EdgeRadius: 0
+--- !u!1 &9040132579181809336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3347725583160478806}
+  m_Layer: 0
+  m_Name: fenceMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3347725583160478806
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040132579181809336}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 11476196900588388}
+  m_Father: {fileID: 5926607470640723641}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -54, y: -443}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9140184262307346083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8838298072110185516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenType: 3
-  bgColor: {r: 0.9716981, g: 0.38431373, b: 0.7490196, a: 1}
+  bgColor: {r: 1, g: 0.6862745, b: 0.6862745, a: 1}
   sheepPrefab: {fileID: 8395444433247846326}
   scoreTMP: {fileID: 4731869680043228092}
   scoreFeedback: {fileID: 7556161329687605344}

@@ -6,6 +6,8 @@ public class ClockController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI clockText = null;
     [SerializeField] private TextMeshProUGUI daysText = null;
+    [SerializeField] BaseScreenController homeScreen = default;
+
 
     [Header("In game time")]
     float gameHourInSeconds = 12; 
@@ -31,6 +33,7 @@ public class ClockController : MonoBehaviour
         advanceGameTime();
 
         clockText.SetText(gameHours.ToString("D2") + ":" + gameMinutes.ToString("D2"));
+        hideOrShowClock();
 
     }
 
@@ -53,5 +56,20 @@ public class ClockController : MonoBehaviour
             }
         }
     }
+    void hideOrShowClock()
+    {
+        var invisColor = new Color (1,1,1,0);
+        var white = new Color (1,1,1,1);
 
+        if(homeScreen.gameObject.activeInHierarchy == false)
+        {
+            clockText.color = invisColor;
+            daysText.color = invisColor;
+        }
+        else
+        {
+            clockText.color = white;
+            daysText.color = white;
+        }
+    }
 }

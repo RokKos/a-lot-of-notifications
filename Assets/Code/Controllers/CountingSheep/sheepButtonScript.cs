@@ -1,19 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class sheepButtonScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] SpriteState spriteSet;
+    [SerializeField] Button button;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        button.spriteState = spriteSet;
     }
 
     public void buttonTest()

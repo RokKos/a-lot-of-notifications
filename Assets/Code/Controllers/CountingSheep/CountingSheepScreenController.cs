@@ -18,15 +18,18 @@ public class CountingSheepScreenController : BaseScreenController
     {
         base.OnScreenEnter();
         sheepPrefab.GetComponent<sheepController>().initSheep();
+        scoreTMP.text = ("Sheep count: 0/10");
     }
 
     public override void OnScreenUpdate()
     {
         base.OnScreenUpdate();
         
-        if(playerScore == 10f)
+        if(playerScore == 10)
         {
             AddScore(playerScore * 700);
+            playerScore = 0;
+            sheepPrefab.GetComponent<sheepController>().resetSheep();
             exitMinigame();
         }        
     }
