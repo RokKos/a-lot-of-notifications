@@ -22,10 +22,10 @@ namespace GG.Infrastructure.Utils.Swipe
         private const string ID_PREFIX = "customID_{0}";
 
         [SerializeField]
-        private List<Vector3Event> _swipes;
+        private List<Vector3Event> _swipes  = default;
 
         [SerializeField]
-        private SwipeListener _swipeListener;
+        private SwipeListener _swipeListener  = default;
 
         private Dictionary<string, Vector3Event> _swipesDictionary;
 

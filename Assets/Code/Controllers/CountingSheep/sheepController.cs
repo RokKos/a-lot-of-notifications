@@ -18,7 +18,7 @@ public class sheepController : MonoBehaviour
     [SerializeField] float timeToEnd = 5f;
     [SerializeField] float timeToJump = 1f;
 
-    [SerializeField] Transform scoreFeedback;
+    [SerializeField] Transform scoreFeedback = default;
 
     float orgSpawn;
     float orgEnd;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProgressBarController : MonoBehaviour
 {
-    [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private RectTransform rectTransform  = default;
     
     [SerializeField] private float minBarValue = 0.0f;
     [SerializeField] private float maxBarValue = 330.0f;
