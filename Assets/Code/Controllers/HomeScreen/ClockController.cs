@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ClockController : MonoBehaviour
 {
+    [Header("Fetchers")]
     [SerializeField] private TextMeshProUGUI clockText = null;
     [SerializeField] private TextMeshProUGUI daysText = null;
+    [SerializeField] TextMeshProUGUI miniClock = null;
+    [SerializeField] TextMeshProUGUI miniDays = null;
     [SerializeField] BaseScreenController homeScreen = default;
+    [SerializeField] BaseScreenController socialScreen = default;
 
 
     [Header("In game time")]
@@ -33,7 +37,9 @@ public class ClockController : MonoBehaviour
         advanceGameTime();
 
         clockText.SetText(gameHours.ToString("D2") + ":" + gameMinutes.ToString("D2"));
+        
         hideOrShowClock();
+        changeNotifciationColor();
 
     }
 
@@ -71,5 +77,23 @@ public class ClockController : MonoBehaviour
             clockText.color = white;
             daysText.color = white;
         }
+    }
+
+    void changeNotifciationColor()
+    {
+        var white = new Color (1,1,1,1);
+        var black = Color.black;
+
+        if(socialScreen.gameObject.activeInHierarchy)
+        {
+            miniClock.color = black;
+            miniDays.color = black;
+        }
+        else
+        {
+            miniClock.color = white;
+            miniDays.color = white;
+        }
+
     }
 }

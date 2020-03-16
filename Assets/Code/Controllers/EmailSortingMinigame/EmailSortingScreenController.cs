@@ -27,6 +27,7 @@ public class EmailSortingScreenController : BaseScreenController
         base.OnScreenExit();
         notificationSpawnerController.correctAction -= AddScore;
         notificationSpawnerController.incorectAction -= SubstractScore;
+        FindObjectOfType<SoundController>().Play("click2");
         
     }
 

@@ -70,6 +70,7 @@ public class ClickerScreenController : BaseScreenController
             post.destroy();
         }
         posts.Clear();
+        FindObjectOfType<SoundController>().Play("click2");
     }
 
     public IGPost makeRandomPost(int number)

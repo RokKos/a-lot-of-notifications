@@ -41,13 +41,19 @@ public class sheepController : MonoBehaviour
     public void sheepJump()
     {
         
-        if(!jumped)
+        if(transform.localScale.x < 0.99)
+            return;
+        else
         {
-            DOTween.Clear();
-            Vector3 jumpLocal = new Vector3 (jumpPosition.position.x, jumpPosition.position.y, transform.position.z);
-            gameObject.GetComponent<Rigidbody2D>().DOJump(jumpLocal, 200f, 1, timeToJump);
-            jumped = true;
+            if(!jumped)
+                {
+                    DOTween.Clear();
+                    Vector3 jumpLocal = new Vector3 (jumpPosition.position.x, jumpPosition.position.y, transform.position.z);
+                    gameObject.GetComponent<Rigidbody2D>().DOJump(jumpLocal, 200f, 1, timeToJump);
+                    jumped = true;
+                }
         }
+
 
     }
 
@@ -118,6 +124,7 @@ public class sheepController : MonoBehaviour
             Debug.Log("Sheep hit fence");
             //tween kill -> death animation
             DOTween.Clear();
+            FindObjectOfType<SoundController>().Play("sfxSheep1");
             
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 
