@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         _currScreenController.OnScreenEnter();
     }
 
-    private void ForceExitMinigame()
+    private void ApplyMinigameScore()
     {
         switch (_currScreenController.GetScreenType())
         {
@@ -170,6 +170,11 @@ public class GameManager : MonoBehaviour
             }
             
         }
+    }
+
+    private void ForceExitMinigame()
+    {
+        ApplyMinigameScore();
         SendEvent("Back");
     }
 
@@ -179,6 +184,7 @@ public class GameManager : MonoBehaviour
         {
             _currScreenController.OnScreenExit();
             _currScreenController.OnScreenDisable();
+            ApplyMinigameScore();
             _currScreenController.exitMinigame -= ForceExitMinigame;
 
             uiManager.ChangeBgColor(_prevScreenController.bgColor);
