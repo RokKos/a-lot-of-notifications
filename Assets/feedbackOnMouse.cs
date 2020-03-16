@@ -22,7 +22,7 @@ public class feedbackOnMouse : MonoBehaviour
         feedbackText.text = feedbackMsg;
         DOTween.Sequence()
             .Append(transform.DOPunchScale(new Vector3(1.3f,1.3f,1.3f), 1.2f, 1, 1))
-            .Append(transform.DOScale(Vector3.one, 0.2f));
+            .Append(transform.DOScale(Vector3.zero, 0.2f));
         
     }
 
