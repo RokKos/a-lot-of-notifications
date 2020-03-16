@@ -72,6 +72,8 @@ public class BaseScreenController : MonoBehaviour
         Debug.Log(screenType.ToString("F") + "::OnScreenDisable()");
         this.gameObject.SetActive(false);
     }
-
+    private void Start() {
+        FindObjectOfType<SoundController>().Play("bgm_Main");
+    }
 
 }

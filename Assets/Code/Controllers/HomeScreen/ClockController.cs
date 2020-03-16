@@ -24,7 +24,10 @@ public class ClockController : MonoBehaviour
     {
         gameDays = 1;
         gameHours = 8;
-        gameMinutes = 0;    
+        gameMinutes = 0;   
+        FindObjectOfType<SoundController>().Play("bgm_Main");
+
+         
     }
     
     void Update()
@@ -37,6 +40,9 @@ public class ClockController : MonoBehaviour
         advanceGameTime();
 
         clockText.SetText(gameHours.ToString("D2") + ":" + gameMinutes.ToString("D2"));
+        miniClock.SetText(gameHours.ToString("D2") + ":" + gameMinutes.ToString("D2"));
+
+
         
         hideOrShowClock();
         changeNotifciationColor();
@@ -58,6 +64,7 @@ public class ClockController : MonoBehaviour
                 gameHours = 0;
                 gameDays ++;
                 daysText.SetText("Day: " + gameDays.ToString("D2"));
+                miniDays.SetText("Day: " + gameDays.ToString("D2"));
 
             }
         }

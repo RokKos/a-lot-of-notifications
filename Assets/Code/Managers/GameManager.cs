@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+
+
+
+
 public enum EventType
 {
     Back = 0,
@@ -14,6 +18,8 @@ public enum EventType
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject endScreen = null;
+
     [SerializeField] private UIManager uiManager = null;
     [SerializeField] private List<BaseScreenController> baseScreenControllers = new List<BaseScreenController>();
     [SerializeField] EmailDataHelper emailDataHelper = null;
@@ -274,6 +280,7 @@ public class GameManager : MonoBehaviour
             if (_workMeterProcent < 1 || _socialMeterProcent < 1 || _healthMeterProcent < 1)
             {
                 Debug.Log("You lose");
+                endScreen.SetActive(true);
             }
 
             UpdateMeters();

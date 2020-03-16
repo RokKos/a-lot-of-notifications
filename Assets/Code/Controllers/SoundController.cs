@@ -24,7 +24,7 @@ public class SoundController : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        Play("bgm_Main");
+        
     }
     public void Play (string name)
     {
