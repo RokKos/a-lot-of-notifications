@@ -238,9 +238,21 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
-            _workMeterProcent -= rateOfMeterDropping;
-            _socialMeterProcent -= rateOfMeterDropping;
-            _healthMeterProcent -= rateOfMeterDropping;
+            if (_currScreenController.GetScreenType() != ScreenTypes.EmailSortingScreen)
+            {
+                _workMeterProcent -= rateOfMeterDropping;
+            }
+
+            if (_currScreenController.GetScreenType() != ScreenTypes.ClickerScreen)
+            {
+                _socialMeterProcent -= rateOfMeterDropping;
+            }
+
+            if (_currScreenController.GetScreenType() != ScreenTypes.CountingScreen)
+            {
+                _healthMeterProcent -= rateOfMeterDropping;
+            }
+
             UpdateMeters();
             UpdateBG();
             yield return new WaitForSeconds(timeIntervalOfDropping);
