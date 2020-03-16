@@ -9,7 +9,8 @@ public class ClickerScreenController : BaseScreenController
     [Header("Values to randomly pick from")]
     public List<Sprite> images;
     public List<Sprite> avatars;
-    public List<string> usernames;
+    public List<string> usernames_good;
+    public List<string> usernames_bad;
     public List<string> texts;
 
     GameObject scrollViewContent;
@@ -26,6 +27,9 @@ public class ClickerScreenController : BaseScreenController
         // Find references
         scrollViewContent = transform.Find("Scroll View/Viewport/Content").gameObject;
         IGPost.postPrefab = scrollViewContent.transform.Find("tpl_ig_post").gameObject;
+
+        // Give posts a ref back to the controller
+        IGPost.controller = this;
 
         // Hide post template
         IGPost.postPrefab.SetActive(false);
@@ -70,8 +74,17 @@ public class ClickerScreenController : BaseScreenController
 
     public IGPost makeRandomPost(int number)
     {
-        // TODO: some less...stupid logic
-        return IGPost.make(number, pickRandom(usernames), Random.Range(0, 99999999), pickRandom(texts), pickRandom(images), pickRandom(avatars));
+        
+        bool good = Random.Range(0, 2) == 1;
+
+        return IGPost.make(number, pickRandom(good ? usernames_good : usernames_bad), Random.Range(0, 99999999), pickRandom(texts), pickRandom(images), pickRandom(avatars), good ? +1 : -1);
+    }
+
+    public void postClicked(IGPost post)
+    {
+        // TODO: Better score system
+        if (post.Score == 1)
+            AddScore(100);
     }
 
     // TODO: maybe move utils somewhere else?

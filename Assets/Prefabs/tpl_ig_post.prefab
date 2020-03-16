@@ -43,7 +43,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -700}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3237228010185923942
@@ -94,12 +94,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcc4420746912e4aba843a41c4ab628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Username: hello world
+  Username: username_goes_here
   Likes: 3141529
-  Text: Lorem ipsum dolor sit amnet
-  Image: {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
-  Avatar: {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
-  Number: 1
+  Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacinia
+    metus. Nunc lobortis lectus elit, quis mattis velit facilisis fermentum
+  Image: {fileID: 21300000, guid: 0d3dbe1261c91dd4197798fe970aee79, type: 3}
+  Avatar: {fileID: 21300000, guid: db8aa298c10511e4084c6964def12b0a, type: 3}
+  Score: 0
+  Number: 0
 --- !u!1 &2813361716221334622
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d3dbe1261c91dd4197798fe970aee79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -249,7 +251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3.141.529
+  m_Text: 3.141.529 likes
 --- !u!1 &4076233744888833024
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: hello world
+  m_Text: username_goes_here
 --- !u!1 &5102008817874052153
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8aa298c10511e4084c6964def12b0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -476,7 +478,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <b>hello world</b> Lorem ipsum dolor sit amnet
+  m_Text: <b>username_goes_here</b> Lorem ipsum dolor sit amet, consectetur adipiscing
+    elit. Sed sit amet lacinia metus. Nunc lobortis lectus elit, quis mattis velit
+    facilisis fermentum
 --- !u!1 &6257769085111413862
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +545,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d06ae1bb37412c64d96a2518da99ac71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97f058e4b72717245ae9ad13aab39dc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -57,18 +57,34 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c65e553ab3b5e884d85c5107ea234f95, type: 3}
   - {fileID: 21300000, guid: 985de64601f9e7e4a8372983c2dd44ab, type: 3}
   - {fileID: 21300000, guid: 0d3dbe1261c91dd4197798fe970aee79, type: 3}
+  - {fileID: 21300000, guid: 5023a53f4e01a654cbd9a4bdbdd82553, type: 3}
   avatars:
-  - {fileID: 21300000, guid: 7faa015ef5a9cb44b872c51f63ef4951, type: 3}
-  - {fileID: 21300000, guid: 5dd7579663dc019449f22365110be418, type: 3}
-  usernames:
-  - Your crazy ex
-  - your grandparents
-  - Alex from kindergarden
-  - Friend's ex
-  - your 2nd grade teacher
-  - boss's daughter
-  - washed-up celebrity
-  - famous youtuber
+  - {fileID: 21300000, guid: 508f05df8012ffc47b614d767c8cc3b4, type: 3}
+  - {fileID: 21300000, guid: f0de61ff1f0c3894eb8822a9857eb4d7, type: 3}
+  - {fileID: 21300000, guid: db8aa298c10511e4084c6964def12b0a, type: 3}
+  - {fileID: 21300000, guid: 56f42c4c13a04fb4ea6cfa4a7bdd6179, type: 3}
+  - {fileID: 21300000, guid: e7c325b3d0019bc4c853cf9e5549a552, type: 3}
+  - {fileID: 21300000, guid: f18a43173139dc34d87c3ac225a27af0, type: 3}
+  usernames_good:
+  - childgood_friend
+  - famous_youtuber
+  - big_celebrity
+  - literally_the_president
+  - nasa
+  - famous_youtuber
+  - famous_youtuber
+  - famous_youtuber
+  - famous_youtuber
+  - famous_youtuber
+  usernames_bad:
+  - boss_s_daughter
+  - crazy_ex
+  - very_crazy_ex
+  - crazy_ex
+  - creepy_old_dude
+  - totally_legit_nigerian_prince
+  - theresa_may
+  - suspected_murderer
   texts:
   - We come to love by not finding the perfect person but by learning to see an imperfect
     person perfectly.
@@ -77,6 +93,14 @@ MonoBehaviour:
   - Me? Weird? Bitch Please! I am a Limited Edition.
   - "I\u2019m sunshine mixed with a little hurricane \u2609\U0001F30A\U0001F60A"
   - Text courtesy of https://sassycaptions.com/generator/
+  - "No, I checked my receipt. I didn\u2019t buy any of your bullshit."
+  - "If I die all I know is I\u2019m a mothafuckin\u2019 legend\u201D"
+  - "Sending my photo to NASA \u2019cause I\u2019m a star \U0001F4AB"
+  - 50% Savage. 50% Sweetness.
+  - Reality is just intangible, what we do not believe is something that we cannot
+    see.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis venenatis
+    turpis vitae vehicula. Nunc est sapien, ornare non maximus in, fermentum eu magna
 --- !u!1 &1466546871460624125
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +570,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5881832320620887296}
     m_Modifications:
+    - target: {fileID: 1306434796256074259, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Text
+      value: username_goes_here
+      objectReference: {fileID: 0}
     - target: {fileID: 1916468862284371776, guid: 775266bd8c8eb674ba4dc9ea256c1324,
         type: 3}
       propertyPath: m_Name
@@ -666,15 +695,47 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 49.8
       objectReference: {fileID: 0}
-    - target: {fileID: 6929562757296118653, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: Number
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6932375835636534201, guid: 775266bd8c8eb674ba4dc9ea256c1324,
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932375835636534201, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Text
+      value: <b>username_goes_here</b> Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Sed sit amet lacinia metus. Nunc lobortis lectus elit, quis mattis velit
+        facilisis fermentum
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.4481132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.47539502
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775266bd8c8eb674ba4dc9ea256c1324, type: 3}
