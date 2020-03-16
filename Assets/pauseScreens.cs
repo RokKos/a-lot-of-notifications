@@ -26,7 +26,7 @@ public class pauseScreens : MonoBehaviour
         
         if(Input.anyKey && EndScreen)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1f;
 
         }

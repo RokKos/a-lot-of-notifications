@@ -323,11 +323,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5591af5b6e7f4143af33243ad065ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndScreen: 0
+  EndScreen: 1
   startPanel: {fileID: 17039958}
   endPanel: {fileID: 223223865}
   startText: {fileID: 1768561466}
-  maingame: {fileID: 0}
+  maingame: {fileID: 796538701}
 --- !u!1 &336054187
 GameObject:
   m_ObjectHideFlags: 0
