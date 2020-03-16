@@ -90,11 +90,13 @@ public class ClickerScreenController : BaseScreenController
         {
             AddScore(100);
             numGood += 1;
+            FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("+++ Social");
         }
         else
         {
             SubstractScore(50);
             numGood -= 1;
+            FindObjectOfType<feedbackOnMouse>().PunchPositiveFeedback("--- Social");
         }
         //attachPost(makeRandomPost(++lastPost));
 

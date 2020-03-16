@@ -22,6 +22,8 @@ public class IGPost : MonoBehaviour
     public static ClickerScreenController controller;
 
     Button likeBtn;
+
+    float lastClick;
     
     public static IGPost make(int number, string username, int likes, string text, Sprite image, Sprite avatar, int score)
     {
@@ -70,6 +72,17 @@ public class IGPost : MonoBehaviour
         likeBtn.transform.DOPunchScale(new Vector3(.3f, .3f, .3f), 0.4f, 3, 1f);
 
         controller.postClicked(this);
+    }
+
+    public void halfClick()
+    {
+        float click = Time.time;
+        if (click - lastClick < .5f)
+        {
+            if (likeBtn.interactable)
+                likeClicked();
+        }
+        lastClick = click;
     }
 
     internal void destroy()

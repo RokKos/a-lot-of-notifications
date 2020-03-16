@@ -708,36 +708,6 @@ PrefabInstance:
         elit. Sed sit amet lacinia metus. Nunc lobortis lectus elit, quis mattis velit
         facilisis fermentum
       objectReference: {fileID: 0}
-    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.4481132
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.47539502
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 0.53333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 0.53333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742141887397930168, guid: 775266bd8c8eb674ba4dc9ea256c1324,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775266bd8c8eb674ba4dc9ea256c1324, type: 3}
 --- !u!224 &1570632687422838311 stripped

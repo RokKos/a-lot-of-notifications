@@ -3733,40 +3733,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7331260849122397467, guid: 19ca67490fa6b6641b7aa485e5289b2f,
         type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7331260849122397467, guid: 19ca67490fa6b6641b7aa485e5289b2f,
-        type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7331260849122397467, guid: 19ca67490fa6b6641b7aa485e5289b2f,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7331260849122397467, guid: 19ca67490fa6b6641b7aa485e5289b2f,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7331260849122397467, guid: 19ca67490fa6b6641b7aa485e5289b2f,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7331260849122397467, guid: 19ca67490fa6b6641b7aa485e5289b2f,
-        type: 3}
       propertyPath: m_Text
-      value: 3,141,529 likes
+      value: 3.141.529 likes
       objectReference: {fileID: 0}
-    - target: {fileID: 7482469920663190004, guid: 19ca67490fa6b6641b7aa485e5289b2f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d3dbe1261c91dd4197798fe970aee79,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ca67490fa6b6641b7aa485e5289b2f, type: 3}
 --- !u!1001 &5303249277138726558
