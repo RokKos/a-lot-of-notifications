@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class ClickerScreenController : BaseScreenController
 {
-    const int INITIAL_POST_NUM = 10;
+    const int INITIAL_POST_NUM = 30;
+    const int NUM_TO_WIN = 10;
 
     [Header("Values to randomly pick from")]
     public List<Sprite> images;
@@ -19,6 +20,8 @@ public class ClickerScreenController : BaseScreenController
 
     int lastPost = 0;
     List<IGPost> posts;
+
+    int numGood = 0;
 
     public override void OnScreenEnter()
     {
@@ -75,8 +78,7 @@ public class ClickerScreenController : BaseScreenController
 
     public IGPost makeRandomPost(int number)
     {
-        
-        bool good = Random.Range(0, 2) == 1;
+        bool good = Random.Range(0, 3) < 2;
 
         return IGPost.make(number, pickRandom(good ? usernames_good : usernames_bad), Random.Range(0, 99999999), pickRandom(texts), pickRandom(images), pickRandom(avatars), good ? +1 : -1);
     }
@@ -85,7 +87,21 @@ public class ClickerScreenController : BaseScreenController
     {
         // TODO: Better score system
         if (post.Score == 1)
+        {
             AddScore(100);
+            numGood += 1;
+        }
+        else
+        {
+            SubstractScore(50);
+            numGood -= 1;
+        }
+        //attachPost(makeRandomPost(++lastPost));
+
+        if (numGood >= NUM_TO_WIN)
+        {
+            exitMinigame();
+        }
     }
 
     // TODO: maybe move utils somewhere else?
