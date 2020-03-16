@@ -29,7 +29,7 @@ public class NotificationSpawnerController : MonoBehaviour
     {
         NotificationController insertedNotificationController = Instantiate(prefabNotificationController, parentNotifications);
         insertedNotificationController.Init();
-
+        FindObjectOfType<SoundController>().Play("msg1");
         foreach (var notificationController in _notificationsDisplayed)
         {
             notificationController.MoveDown();
@@ -54,6 +54,7 @@ public class NotificationSpawnerController : MonoBehaviour
         if (lastNotification != null)
         {
             lastNotification.OnDeleteSpam();
+            FindObjectOfType<SoundController>().Play("click1");
 
             switch (lastNotification.type)
             {
@@ -84,6 +85,7 @@ public class NotificationSpawnerController : MonoBehaviour
         if (lastNotification != null)
         {
             lastNotification.OnReadUsefull();
+            FindObjectOfType<SoundController>().Play("click2");
 
             switch (lastNotification.type)
             {

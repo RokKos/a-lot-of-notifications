@@ -2486,7 +2486,7 @@ MonoBehaviour:
   sounds:
   - name: bgm_Main
     clip: {fileID: 8300000, guid: 7a9759d4ab4467d4eb241be4808204bd, type: 3}
-    volume: 0.35
+    volume: 0.1
     pitch: 1
     source: {fileID: 0}
   - name: bgm_Sheep
@@ -2526,6 +2526,11 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: msg2
     clip: {fileID: 8300000, guid: 6f3f4da6041628544992aeff91179c68, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: click2
+    clip: {fileID: 8300000, guid: 009788d214e2e4c4da11cd7855ff8daf, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
