@@ -23,14 +23,24 @@ public class CountingSheepScreenController : BaseScreenController
     public override void OnScreenUpdate()
     {
         base.OnScreenUpdate();
-
         
+        if(playerScore == 10f)
+        {
+            AddScore(playerScore * 700);
+            exitMinigame();
+        }        
     }
 
     public void addCounter()
     {
             playerScore++;
             scoreTMP.text = ("Sheep count: " + playerScore + "/10");
+    }
+
+    public override void OnScreenExit()
+    {
+        base.OnScreenExit();
+        AddScore(playerScore * 700);
     }
 
 }
